@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import { Fragment } from 'react'
 import styles from '../styles/page.module.css'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <Fragment>
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -74,6 +75,6 @@ export default function Home() {
           <p>Instantly deploy your Next.js site to a shareable URL with Vercel.</p>
         </a>
       </div>
-    </main>
+    </Fragment>
   )
 }
