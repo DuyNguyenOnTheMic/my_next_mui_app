@@ -1,5 +1,5 @@
 {
-  "env": { "browser": true, "es6": true, "node": true },
+  "env": { "browser": true, "es2024": true, "node": true },
   "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
   "rules": {
     "react/display-name": "off",
