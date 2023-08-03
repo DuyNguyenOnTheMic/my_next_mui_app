@@ -1,4 +1,4 @@
-export default function SideMenu() {
+export default function Sidebar() {
   return (
     <ul>
       <li>Analytics</li>
