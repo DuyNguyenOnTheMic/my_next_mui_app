@@ -1,6 +1,11 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 import { Fragment } from 'react'
 import styles from '../styles/page.module.css'
+
+export const metadata: Metadata = {
+  title: 'Home page'
+}
 
 export default function Home() {
   return (
