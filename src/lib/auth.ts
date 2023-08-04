@@ -1,7 +1,7 @@
-import NextAuth from 'next-auth'
+import type { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 
-export default NextAuth({
+export const authOptions: NextAuthOptions = {
   providers: [
     // OAuth authentication providers...
     GoogleProvider({
@@ -16,4 +16,4 @@ export default NextAuth({
       }
     })
   ]
-})
+}
