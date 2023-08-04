@@ -7,9 +7,11 @@ export default async function Header() {
   const session = await getServerSession(authOptions)
 
   return (
-    <Fragment>
-      <h1>Header</h1>
-      <Avatar alt={session?.user?.name as string} src={session?.user?.image as string} />
-    </Fragment>
+    session && (
+      <Fragment>
+        <h1>Header</h1>
+        <Avatar alt={session.user?.name as string} src={session?.user?.image as string} />
+      </Fragment>
+    )
   )
 }
