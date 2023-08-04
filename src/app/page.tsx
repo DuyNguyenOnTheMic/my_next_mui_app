@@ -1,5 +1,5 @@
-import Header from '@/@core/components/header/Header'
-import Sidebar from '@/@core/components/sidebar/Sidebar'
+import Header from '@/components/header/Header'
+import Sidebar from '@/components/sidebar/Sidebar'
 import { Metadata } from 'next'
 import styles from '../styles/page.module.css'
 import Dashboard from './dashboard/page'
