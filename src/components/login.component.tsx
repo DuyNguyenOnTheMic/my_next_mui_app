@@ -1,6 +1,7 @@
 'use client'
 
 import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { Fragment } from 'react'
 
@@ -9,15 +10,13 @@ const Login = () => {
 
   return session ? (
     <Fragment>
-      <p>Signed in as {session.user?.email}</p>
-      <p>Welcome {session.user?.name}</p>
       <Button variant={'contained'} color={'error'} onClick={() => signOut()}>
         Sign out
       </Button>
     </Fragment>
   ) : (
     <Fragment>
-      <p>Please log in</p>
+      <Typography>Please sign in</Typography>
       <Button variant={'contained'} color={'success'} onClick={() => signIn()}>
         Sign in
       </Button>
