@@ -123,7 +123,9 @@ export default function Header() {
               </Button>
             ))}
           </Box>
-
+          <Box sx={{ flexGrow: 0, mr: 2 }}>
+            <Typography>Signed in as {session?.user?.email}</Typography>
+          </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title='Open profile settings'>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
