@@ -1,11 +1,22 @@
 'use client'
 
+import AdbIcon from '@mui/icons-material/Adb'
+import MenuIcon from '@mui/icons-material/Menu'
+import AppBar from '@mui/material/AppBar'
 import Avatar from '@mui/material/Avatar'
-import { useSession } from 'next-auth/react'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container'
+import IconButton from '@mui/material/IconButton'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import Toolbar from '@mui/material/Toolbar'
+import Tooltip from '@mui/material/Tooltip'
+import Typography from '@mui/material/Typography'
+import { signIn, signOut, useSession } from 'next-auth/react'
 import { useState } from 'react'
 
 const pages = ['Products', 'Pricing', 'Blog']
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 export default function Header() {
   const { data: session } = useSession()
@@ -28,14 +39,6 @@ export default function Header() {
   }
 
   return (
-<<<<<<< HEAD
-    session && (
-      <Fragment>
-        <h1>Header</h1>
-        <Avatar alt={session.user?.name as string} src={session?.user?.image as string} />
-      </Fragment>
-    )
-=======
     <AppBar position='static'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
@@ -151,6 +154,5 @@ export default function Header() {
         </Toolbar>
       </Container>
     </AppBar>
->>>>>>> 96caf18 (Update header nav bar from MUI)
   )
 }
