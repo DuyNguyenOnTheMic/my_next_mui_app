@@ -1,4 +1,5 @@
 import Header from '@/components/header.component'
+import Login from '@/components/login.component'
 import Sidebar from '@/components/sidebar.component'
 import { Metadata } from 'next'
 import styles from '../styles/page.module.css'
@@ -14,6 +15,7 @@ export default function Home() {
       <Header />
       <Sidebar />
       <Dashboard />
+      <Login />
     </main>
   )
 }
