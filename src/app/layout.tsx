@@ -1,5 +1,3 @@
-import Header from '@/@core/components/header/Header'
-import Sidebar from '@/@core/components/sidebar/Sidebar'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../styles/globals.css'
@@ -14,13 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        <main>
-          <Header />
-          <Sidebar />
-          {children}
-        </main>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
