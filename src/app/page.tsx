@@ -9,7 +9,7 @@ import scss from '../styles/Home.module.scss'
 import Dashboard from './dashboard/page'
 
 export const metadata: Metadata = {
-  title: 'Home page'
+  title: 'DataSoft - Dashboard'
 }
 
 export default async function Home() {
