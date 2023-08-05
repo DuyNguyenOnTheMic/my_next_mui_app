@@ -37,7 +37,6 @@ export default function Header({ ColorModeContext }: HeaderProps) {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
   }
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null)
   }
