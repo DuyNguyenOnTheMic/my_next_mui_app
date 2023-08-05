@@ -1,10 +1,5 @@
 import scss from '@/styles/Dashboard.module.scss'
 import { Box, Grid, Paper } from '@mui/material'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Dashboard'
-}
 
 export default function Dashboard() {
   return (

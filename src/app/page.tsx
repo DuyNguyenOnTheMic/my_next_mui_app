@@ -1,15 +1,10 @@
 import Login from '@/components/login.component'
 import Sidebar from '@/components/sidebar.component'
 import { authOptions } from '@/lib/auth'
-import { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import { Fragment } from 'react'
 import scss from '../styles/Home.module.scss'
 import Dashboard from './dashboard/page'
-
-export const metadata: Metadata = {
-  title: 'DataSoft - Dashboard'
-}
 
 export default async function Home() {
   const session = await getServerSession(authOptions)
