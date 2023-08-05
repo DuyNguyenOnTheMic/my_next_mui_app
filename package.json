@@ -11,14 +11,14 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@emotion/react": "11.11.1",
-    "@emotion/styled": "11.11.0",
-    "@mui/icons-material": "5.14.3",
-    "@mui/material": "5.14.3",
-    "next": "13.4.12",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.3",
+    "next": "^13.4.12",
     "next-auth": "^4.22.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.2.1",
@@ -29,21 +29,21 @@
     "@storybook/nextjs": "^7.2.1",
     "@storybook/react": "^7.2.1",
     "@storybook/testing-library": "^0.2.0",
-    "@types/node": "20.4.6",
-    "@types/react": "18.2.18",
-    "@types/react-dom": "18.2.7",
-    "@typescript-eslint/eslint-plugin": "6.2.1",
-    "@typescript-eslint/parser": "6.2.1",
-    "eslint": "8.46.0",
-    "eslint-config-next": "13.4.12",
-    "eslint-config-prettier": "8.9.0",
-    "eslint-import-resolver-alias": "1.1.2",
-    "eslint-import-resolver-typescript": "3.5.5",
-    "eslint-plugin-import": "2.28.0",
+    "@types/node": "^20.4.6",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-config-next": "^13.4.12",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-storybook": "^0.6.13",
-    "prettier": "3.0.0",
-    "sass": "1.64.2",
+    "prettier": "^3.0.0",
+    "sass": "^1.64.2",
     "storybook": "^7.2.1",
-    "typescript": "5.1.6"
+    "typescript": "^5.1.6"
   }
 }
