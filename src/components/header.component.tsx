@@ -2,6 +2,7 @@
 
 import AdbIcon from '@mui/icons-material/Adb'
 import MenuIcon from '@mui/icons-material/Menu'
+import { useMediaQuery } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
@@ -42,6 +43,8 @@ export default function Header({ ColorModeContext }: HeaderProps) {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null)
   }
+
+  const tabletCheck = useMediaQuery('(min-width: 768px)')
 
   return (
     <AppBar position='static'>
@@ -128,9 +131,11 @@ export default function Header({ ColorModeContext }: HeaderProps) {
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0, mr: 2 }}>
-            <Typography>Signed in as {session?.user?.email}</Typography>
-          </Box>
+          {tabletCheck && (
+            <Box sx={{ flexGrow: 0, mr: 2 }}>
+              <Typography>Signed in as {session?.user?.email}</Typography>
+            </Box>
+          )}
           <ThemeToggleButton ColorModeContext={ColorModeContext} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title='Open profile settings'>
