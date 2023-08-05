@@ -2,13 +2,13 @@
 
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
-import { Box, IconButton, ThemeProvider, createTheme } from '@mui/material'
+import { Box, CssBaseline, IconButton, ThemeProvider, createTheme } from '@mui/material'
 import { SessionProvider } from 'next-auth/react'
 import React from 'react'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} })
 
-export default function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({ children }: { children: any }) {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light')
   const colorMode = React.useMemo(
     () => ({
@@ -33,6 +33,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <SessionProvider>
+          <CssBaseline />
           <Box
             sx={{
               display: 'flex',
