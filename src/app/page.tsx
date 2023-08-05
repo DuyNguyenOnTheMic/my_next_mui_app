@@ -5,6 +5,7 @@ import { authOptions } from '@/lib/auth'
 import { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
 import { Fragment } from 'react'
+import scss from '../styles/Home.module.scss'
 import Dashboard from './dashboard/page'
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export default async function Home() {
   const session = await getServerSession(authOptions)
 
   return (
-    <main>
+    <main className={scss.main}>
       <Header />
       {session && (
         <Fragment>
