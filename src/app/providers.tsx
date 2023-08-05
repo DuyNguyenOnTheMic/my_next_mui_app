@@ -25,6 +25,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       createTheme({
         ...darkTheme
       }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [mode]
   )
 
@@ -33,6 +34,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       createTheme({
         ...lightTheme
       }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [mode]
   )
 
