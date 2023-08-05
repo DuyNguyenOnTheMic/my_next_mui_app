@@ -1,5 +1,3 @@
-'use client'
-
 import scss from '@/styles/Dashboard.module.scss'
 import { Box, Grid, Paper } from '@mui/material'
 import { Metadata } from 'next'
@@ -8,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Dashboard'
 }
 
-export default function BasicGrid() {
+export default function Dashboard() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
