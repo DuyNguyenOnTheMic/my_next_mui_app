@@ -1,8 +1,8 @@
 'use client'
 
-import Brightness4Icon from '@mui/icons-material/Brightness4'
-import Brightness7Icon from '@mui/icons-material/Brightness7'
-import { Box, CssBaseline, IconButton, ThemeProvider, createTheme } from '@mui/material'
+import darkTheme from '@/theme/darkTheme'
+import lightTheme from '@/theme/lightTheme'
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 import { SessionProvider } from 'next-auth/react'
 import React from 'react'
 
@@ -19,38 +19,27 @@ export default function Providers({ children }: { children: any }) {
     []
   )
 
-  const theme = React.useMemo(
+  const darkThemeChosen = React.useMemo(
     () =>
       createTheme({
-        palette: {
-          mode
-        }
+        ...darkTheme
+      }),
+    [mode]
+  )
+
+  const lightThemeChosen = React.useMemo(
+    () =>
+      createTheme({
+        ...lightTheme
       }),
     [mode]
   )
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={mode === 'dark' ? darkThemeChosen : lightThemeChosen}>
         <SessionProvider>
           <CssBaseline />
-          <Box
-            sx={{
-              display: 'flex',
-              width: '100%',
-              alignItems: 'center',
-              justifyContent: 'center',
-              bgcolor: 'background.default',
-              color: 'text.primary',
-              borderRadius: 1,
-              p: 3
-            }}
-          >
-            {theme.palette.mode} mode
-            <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color='inherit'>
-              {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-          </Box>
           {children}
         </SessionProvider>
       </ThemeProvider>
