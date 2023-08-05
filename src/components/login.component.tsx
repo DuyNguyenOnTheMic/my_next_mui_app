@@ -1,27 +1,18 @@
-'use client'
-
-import Button from '@mui/material/Button'
+import { authOptions } from '@/lib/auth'
 import Typography from '@mui/material/Typography'
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { getServerSession } from 'next-auth'
 import { Fragment } from 'react'
+import { LoginButton, LogoutButton } from './buttons.component'
 
-const Login = () => {
-  const { data: session } = useSession()
+export default async function Login() {
+  const session = await getServerSession(authOptions)
 
   return session ? (
-    <Fragment>
-      <Button variant={'contained'} color={'error'} onClick={() => signOut()}>
-        Sign out
-      </Button>
-    </Fragment>
+    <LogoutButton />
   ) : (
     <Fragment>
-      <Typography>Please sign in</Typography>
-      <Button variant={'contained'} color={'success'} onClick={() => signIn()}>
-        Sign in
-      </Button>
+      <Typography variant='h2'>Please sign in</Typography> <br />
+      <LoginButton />
     </Fragment>
   )
 }
-
-export default Login
