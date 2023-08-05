@@ -1,5 +1,3 @@
-'use client'
-
 import AdbIcon from '@mui/icons-material/Adb'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useMediaQuery } from '@mui/material'
