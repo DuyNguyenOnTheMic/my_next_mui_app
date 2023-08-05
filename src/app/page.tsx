@@ -1,4 +1,3 @@
-import Header from '@/components/header.component'
 import Login from '@/components/login.component'
 import Sidebar from '@/components/sidebar.component'
 import { authOptions } from '@/lib/auth'
@@ -17,7 +16,6 @@ export default async function Home() {
 
   return (
     <main className={scss.main}>
-      <Header />
       {session && (
         <Fragment>
           <Sidebar />

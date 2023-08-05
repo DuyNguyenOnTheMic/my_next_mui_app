@@ -1,5 +1,6 @@
 'use client'
 
+import Header from '@/components/header.component'
 import darkTheme from '@/theme/darkTheme'
 import lightTheme from '@/theme/lightTheme'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
@@ -8,7 +9,7 @@ import React from 'react'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} })
 
-export default function Providers({ children }: { children: any }) {
+export default function Providers({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light')
   const colorMode = React.useMemo(
     () => ({
@@ -40,6 +41,7 @@ export default function Providers({ children }: { children: any }) {
       <ThemeProvider theme={mode === 'dark' ? darkThemeChosen : lightThemeChosen}>
         <SessionProvider>
           <CssBaseline />
+          <Header ColorModeContext={ColorModeContext} />
           {children}
         </SessionProvider>
       </ThemeProvider>
