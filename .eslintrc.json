@@ -1,6 +1,11 @@
 {
   "env": { "browser": true, "es2024": true, "node": true },
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:storybook/recommended",
+    "prettier"
+  ],
   "rules": {
     "react/display-name": "off",
     "@next/next/no-img-element": "off",
