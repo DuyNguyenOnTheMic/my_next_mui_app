@@ -10,7 +10,7 @@ export type ThemeToggleButtonProps = {
   ColorModeContext: React.Context<{ toggleColorMode: () => void }>
 }
 
-const ThemeToggleButton = (props: ThemeToggleButtonProps) => {
+export default function ThemeToggle(props: ThemeToggleButtonProps) {
   const mobileCheck = useMediaQuery('(min-width: 500px)')
   const { ColorModeContext = createContext({ toggleColorMode: () => {} }) } = props
   const theme = useTheme()
@@ -31,5 +31,3 @@ const ThemeToggleButton = (props: ThemeToggleButtonProps) => {
     </Fragment>
   )
 }
-
-export default ThemeToggleButton

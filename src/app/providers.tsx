@@ -1,6 +1,6 @@
 'use client'
 
-import Header from '@/components/header.component'
+import Header from '@/components/Header/Header'
 import darkTheme from '@/theme/darkTheme'
 import lightTheme from '@/theme/lightTheme'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'

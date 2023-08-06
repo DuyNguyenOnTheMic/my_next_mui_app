@@ -1,4 +1,4 @@
-import Login from '@/components/login.component'
+import Login from '@/components/Login/Login'
 import Sidebar from '@/components/sidebar.component'
 import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'

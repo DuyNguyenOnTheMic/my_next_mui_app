@@ -14,7 +14,7 @@ import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { useState } from 'react'
-import ThemeToggleButton from './themeToggleButton.component'
+import ThemeToggle from '../ThemeToggle/ThemeToggle'
 
 const pages = ['Products', 'Pricing', 'Blog']
 
@@ -133,7 +133,7 @@ export default function Header({ ColorModeContext }: HeaderProps) {
               <Typography>Signed in as {session?.user?.email}</Typography>
             </Box>
           )}
-          <ThemeToggleButton ColorModeContext={ColorModeContext} />
+          <ThemeToggle ColorModeContext={ColorModeContext} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title='Open profile settings'>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
