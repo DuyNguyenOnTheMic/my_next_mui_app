@@ -1,5 +1,5 @@
 import Login from '@/components/Login/Login'
-import Sidebar from '@/components/sidebar.component'
+import Sidebar from '@/components/Sidebar/Sidebar'
 import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'
 import { Fragment } from 'react'
