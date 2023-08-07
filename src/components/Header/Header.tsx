@@ -1,5 +1,4 @@
 import AdbIcon from '@mui/icons-material/Adb'
-import { useMediaQuery } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
@@ -29,8 +28,6 @@ export default function Header({ ColorModeContext }: HeaderProps) {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null)
   }
-
-  const tabletCheck = useMediaQuery('(min-width: 768px)')
 
   return (
     <AppBar position='static'>
@@ -71,13 +68,11 @@ export default function Header({ ColorModeContext }: HeaderProps) {
               textDecoration: 'none'
             }}
           >
-            LOGO
+            DataSoft
           </Typography>
-          {tabletCheck && (
-            <Box sx={{ flexGrow: 0, mr: 2, ml: 'auto' }}>
-              <Typography>Signed in as {session?.user?.email}</Typography>
-            </Box>
-          )}
+          <Box sx={{ flexGrow: 0, mr: 2, ml: 'auto' }}>
+            <Typography>{session?.user?.name}</Typography>
+          </Box>
           <ThemeToggle ColorModeContext={ColorModeContext} />
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title='Open profile settings'>
