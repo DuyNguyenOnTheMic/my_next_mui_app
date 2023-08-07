@@ -1,6 +1,7 @@
 'use client'
 
 import Header from '@/components/Header/Header'
+import Layout from '@/components/Layout'
 import darkTheme from '@/theme/darkTheme'
 import lightTheme from '@/theme/lightTheme'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
@@ -44,7 +45,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         <SessionProvider>
           <CssBaseline />
           <Header ColorModeContext={ColorModeContext} />
-          {children}
+          <Layout>{children}</Layout>
         </SessionProvider>
       </ThemeProvider>
     </ColorModeContext.Provider>
