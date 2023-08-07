@@ -1,5 +1,5 @@
-import scss from '@/styles/Dashboard.module.scss'
 import { Box, Grid, Paper } from '@mui/material'
+import scss from './Dashboard.module.scss'
 
 export default function Dashboard() {
   return (
