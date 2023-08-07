@@ -16,6 +16,7 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import { CSSObject, Theme, useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import { signOut } from 'next-auth/react'
 import Link from 'next/link'
 import * as React from 'react'
 import scss from './Sidebar.module.scss'
@@ -61,6 +62,11 @@ export default function Sidebar() {
     setOpen(!open)
   }
 
+  const handleListItemButtonClick = (text: string) => {
+    text === 'Sign Out' && signOut()
+    setOpen(false)
+  }
+
   return (
     <Drawer
       variant='permanent'
@@ -94,6 +100,9 @@ export default function Sidebar() {
         {menuListTranslations.map((text, index) => (
           <ListItem key={text} disablePadding sx={{ display: 'block' }}>
             <ListItemButton
+              onClick={() => handleListItemButtonClick(text)}
+              title={text}
+              aria-label={text}
               sx={{
                 minHeight: 48,
                 justifyContent: open ? 'initial' : 'center',
