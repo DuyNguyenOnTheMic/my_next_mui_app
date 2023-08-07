@@ -43,10 +43,10 @@ const closedMixin = (theme: Theme): CSSObject => ({
   }
 })
 
-const menuRouteList = ['data', 'profile', 'settings', '']
-const menuListTranslations = ['Data', 'Profile', 'Settings', 'Sign Out']
+const menuRouteList = ['analytics', 'profile', 'settings', '']
+const menuListTranslations = ['Analytics', 'Profile', 'Settings', 'Sign Out']
 const menuListIcons = [
-  <BarChartIcon key='data' />,
+  <BarChartIcon key='analytics' />,
   <Person2Icon key='profile' />,
   <SettingsIcon key='settings' />,
   <ExitToAppIcon key='sign out' />
@@ -93,26 +93,26 @@ export default function Sidebar() {
       <List>
         {menuListTranslations.map((text, index) => (
           <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-            <Link className={scss.link} href={`/dashboard/${menuRouteList[index]}`}>
-              <ListItemButton
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5
+              }}
+              LinkComponent={Link}
+              href={`/dashboard/${menuRouteList[index]}`}
+            >
+              <ListItemIcon
                 sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center'
                 }}
               >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center'
-                  }}
-                >
-                  {menuListIcons[index]}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ color: theme.palette.text.primary, opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </Link>
+                {menuListIcons[index]}
+              </ListItemIcon>
+              <ListItemText primary={text} sx={{ color: theme.palette.text.primary, opacity: open ? 1 : 0 }} />
+            </ListItemButton>
           </ListItem>
         ))}
       </List>
