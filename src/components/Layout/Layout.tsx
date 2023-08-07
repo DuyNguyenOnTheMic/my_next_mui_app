@@ -1,5 +1,5 @@
 import { useSession } from 'next-auth/react'
-import Sidebar from '../Sidebar/Sidebar'
+import Sidebar from '../Sidebar'
 import scss from './Layout.module.scss'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
