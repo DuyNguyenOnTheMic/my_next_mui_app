@@ -1,4 +1,4 @@
-import Login from '@/components/Login/Login'
+import Login from '@/components/Login'
 import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'
 import { Fragment } from 'react'
