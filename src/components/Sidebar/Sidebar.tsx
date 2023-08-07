@@ -13,6 +13,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import { CSSObject, Theme, useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import * as React from 'react'
 import scss from './Sidebar.module.scss'
 
@@ -42,36 +43,37 @@ const closedMixin = (theme: Theme): CSSObject => ({
 export default function Sidebar() {
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
+  const mobileCheck = useMediaQuery('(min-width: 600px)')
 
-  /* const handleDrawerOpen = () => {
-    setOpen(true)
-  } */
-
-  const handleDrawerClose = () => {
-    setOpen(false)
+  const handleDrawerToggle = () => {
+    setOpen(!open)
   }
 
   return (
     <Drawer
       variant='permanent'
+      anchor='left'
       open={open}
       sx={{
         width: drawerWidth,
-        flexShrink: 0,
-        whiteSpace: 'nowrap',
-        boxSizing: 'border-box',
-        ...(open && {
-          ...openedMixin(theme),
-          '& .MuiDrawer-paper': openedMixin(theme)
-        }),
-        ...(!open && {
-          ...closedMixin(theme),
-          '& .MuiDrawer-paper': closedMixin(theme)
-        })
+        [`& .MuiDrawer-paper`]: {
+          top: mobileCheck ? 64 : 57,
+          flexShrink: 0,
+          whiteSpace: 'nowrap',
+          boxSizing: 'border-box',
+          ...(open && {
+            ...openedMixin(theme),
+            '& .MuiDrawer-paper': openedMixin(theme)
+          }),
+          ...(!open && {
+            ...closedMixin(theme),
+            '& .MuiDrawer-paper': closedMixin(theme)
+          })
+        }
       }}
     >
       <div className={scss.drawerHeader}>
-        <IconButton onClick={handleDrawerClose}>
+        <IconButton onClick={handleDrawerToggle}>
           {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
         </IconButton>
       </div>
