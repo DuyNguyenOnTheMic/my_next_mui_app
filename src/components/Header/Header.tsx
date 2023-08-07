@@ -12,7 +12,7 @@ import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { useState } from 'react'
-import ThemeToggle from '../ThemeToggle/ThemeToggle'
+import ThemeToggle from '../ThemeToggle'
 
 export type HeaderProps = {
   ColorModeContext: React.Context<{ toggleColorMode: () => void }>
