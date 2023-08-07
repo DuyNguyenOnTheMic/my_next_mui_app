@@ -1,9 +1,11 @@
 'use client'
 
+import BarChartIcon from '@mui/icons-material/BarChart'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import MailIcon from '@mui/icons-material/Mail'
-import InboxIcon from '@mui/icons-material/MoveToInbox'
+import ExitToAppIcon from '@mui/icons-material/ExitToApp'
+import Person2Icon from '@mui/icons-material/Person2'
+import SettingsIcon from '@mui/icons-material/Settings'
 import Divider from '@mui/material/Divider'
 import Drawer from '@mui/material/Drawer'
 import IconButton from '@mui/material/IconButton'
@@ -39,6 +41,15 @@ const closedMixin = (theme: Theme): CSSObject => ({
     width: `calc(${theme.spacing(8)} + 1px)`
   }
 })
+
+const menuRouteList = ['data', 'profile', 'settings', '']
+const menuListTranslations = ['Data', 'Profile', 'Settings', 'Sign Out']
+const menuListIcons = [
+  <BarChartIcon key='data' />,
+  <Person2Icon key='profile' />,
+  <SettingsIcon key='settings' />,
+  <ExitToAppIcon key='sign out' />
+]
 
 export default function Sidebar() {
   const theme = useTheme()
@@ -79,7 +90,7 @@ export default function Sidebar() {
       </div>
       <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {menuListTranslations.map((text, index) => (
           <ListItem key={text} disablePadding sx={{ display: 'block' }}>
             <ListItemButton
               sx={{
@@ -95,32 +106,7 @@ export default function Sidebar() {
                   justifyContent: 'center'
                 }}
               >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5
-              }}
-            >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center'
-                }}
-              >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {menuListIcons[index]}
               </ListItemIcon>
               <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
