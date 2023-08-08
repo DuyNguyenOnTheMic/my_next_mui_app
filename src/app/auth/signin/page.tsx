@@ -1,10 +1,11 @@
 import Login from '@/components/Login'
+import { authOptions } from '@/lib/auth'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { useSession } from 'next-auth/react'
+import { getServerSession } from 'next-auth'
 
-export default function SignIn() {
-  const { data: session } = useSession()
+export default async function SignIn() {
+  const session = await getServerSession(authOptions)
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
