@@ -10,7 +10,7 @@ export default async function SignIn() {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
       <Typography variant='h2'>{session ? 'Thanh you for logging in' : 'Please log in'}</Typography>
-      <Login />
+      <Login session={session} />
     </Box>
   )
 }

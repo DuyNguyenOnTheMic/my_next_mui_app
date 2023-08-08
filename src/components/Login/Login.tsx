@@ -1,9 +1,12 @@
-import { authOptions } from '@/lib/auth'
-import { getServerSession } from 'next-auth'
+import { Session } from 'next-auth'
 import { LoginButton, LogoutButton } from '../Buttons'
 
-export default async function Login() {
-  const session = await getServerSession(authOptions)
+export type LoginProps = {
+  session: Session | null
+}
+
+export default function Login(props: LoginProps) {
+  const { session } = props
 
   return session ? <LogoutButton /> : <LoginButton />
 }
