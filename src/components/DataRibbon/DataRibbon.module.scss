@@ -3,7 +3,7 @@
   text-align: center;
   grid-template-columns: 1fr;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 900px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
