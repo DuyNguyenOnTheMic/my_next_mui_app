@@ -1,15 +1,21 @@
-.dataCard {
-  position: relative;
-  top: 1rem;
-  height: 100%;
-  width: calc(100% - 0.1rem);
-
+@mixin headings {
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
+    @content;
+  }
+}
+
+.dataCard {
+  position: relative;
+  top: 1rem;
+  height: 100%;
+  width: calc(100% - 0.1rem);
+
+  @include headings {
     padding: 0.5rem 1rem;
     margin: 0;
   }
@@ -18,4 +24,8 @@
 .header {
   display: flex;
   justify-content: center;
+
+  @include headings {
+    padding: 0.25rem;
+  }
 }
