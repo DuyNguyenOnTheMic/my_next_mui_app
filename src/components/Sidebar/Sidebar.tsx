@@ -103,7 +103,6 @@ export default function Sidebar() {
             <Tooltip title={!open && text} placement='right'>
               <ListItemButton
                 onClick={() => handleListItemButtonClick(text)}
-                title={text}
                 aria-label={text}
                 sx={{
                   minHeight: 48,
