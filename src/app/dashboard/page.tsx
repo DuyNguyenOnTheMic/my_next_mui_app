@@ -1,11 +1,11 @@
-import { Box } from '@mui/material'
+import Box from '@mui/material/Box'
 
 export default function Dashboard() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      {/* Data Ribbon - Showing numerical stats */}
-      {/* TransactionsPerDay */}
-      {/* Transaction Doughnut Charts Bottom Row */}
+      {/* Data Ribbon - showing numerical stats */}
+      {/* TransactionsPerDay - graph - numerical cards */}
+      {/* Transaction Doughnut Charts Bottom Row - a few doughnut charts to break down some data into fraction */}
     </Box>
   )
 }
