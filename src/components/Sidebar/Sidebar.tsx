@@ -14,6 +14,7 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
+import Tooltip from '@mui/material/Tooltip'
 import { CSSObject, Theme, useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { signOut } from 'next-auth/react'
@@ -99,29 +100,31 @@ export default function Sidebar() {
       <List>
         {menuListTranslations.map((text, index) => (
           <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              onClick={() => handleListItemButtonClick(text)}
-              title={text}
-              aria-label={text}
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5
-              }}
-              LinkComponent={Link}
-              href={`/dashboard/${menuRouteList[index]}`}
-            >
-              <ListItemIcon
+            <Tooltip title={!open && text} placement='right'>
+              <ListItemButton
+                onClick={() => handleListItemButtonClick(text)}
+                title={text}
+                aria-label={text}
                 sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center'
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5
                 }}
+                LinkComponent={Link}
+                href={`/dashboard/${menuRouteList[index]}`}
               >
-                {menuListIcons[index]}
-              </ListItemIcon>
-              <ListItemText primary={text} sx={{ color: theme.palette.text.primary, opacity: open ? 1 : 0 }} />
-            </ListItemButton>
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {menuListIcons[index]}
+                </ListItemIcon>
+                <ListItemText primary={text} sx={{ color: theme.palette.text.primary, opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </Tooltip>
           </ListItem>
         ))}
       </List>
