@@ -3,6 +3,8 @@ import { months } from '@/helper/Util'
 import { Chart, ChartConfiguration, registerables } from 'chart.js'
 import { useEffect, useRef } from 'react'
 
+Chart.register(...registerables)
+
 export default function DataChart(props: ChartConfiguration) {
   const { data, options } = props
   const chartRef = useRef<HTMLCanvasElement>(null)
@@ -25,5 +27,3 @@ export default function DataChart(props: ChartConfiguration) {
 
   return <canvas ref={chartRef} />
 }
-
-Chart.register(...registerables)
