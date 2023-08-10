@@ -1,4 +1,5 @@
-import DataRibbon from '@/components/DataRibbon'
+import DataRibbon from '@/components/Dashboard/DataRibbon'
+import TransactionsPerDay from '@/components/Dashboard/TransactionsPerDay'
 import Box from '@mui/material/Box'
 
 export default function Dashboard() {
@@ -7,6 +8,7 @@ export default function Dashboard() {
       {/* Data Ribbon - showing numerical stats */}
       <DataRibbon />
       {/* TransactionsPerDay - graph - numerical cards */}
+      <TransactionsPerDay />
       {/* Transaction Doughnut Charts Bottom Row - a few doughnut charts to break down some data into fraction */}
     </Box>
   )

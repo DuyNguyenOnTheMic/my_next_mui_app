@@ -21,7 +21,7 @@ export default function DataCard(props: DataCardProps) {
         <Typography variant='h6' color='lightslategrey'>
           {title}
         </Typography>
-        <Tooltip title={<Typography fontSize={16}>{`${description} which is ${value}"`}</Typography>}>
+        <Tooltip title={<Typography fontSize={16}>{`"${description} which is ${value}"`}</Typography>}>
           <IconButton>
             <InfoOutlinedIcon />
           </IconButton>
