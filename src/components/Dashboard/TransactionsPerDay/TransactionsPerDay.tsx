@@ -7,7 +7,7 @@ import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
-import { useTheme } from '@mui/system'
+import { ChartConfiguration } from 'chart.js'
 import scss from './TransactionsPerDay.module.scss'
 
 export type TransactionCardType = {
@@ -16,15 +16,21 @@ export type TransactionCardType = {
   changeValue: string
 }
 
-export default function TransactionsPerDay() {
-  const theme = useTheme()
+const chartOptions: ChartConfiguration['options'] = {
+  interaction: {
+    mode: 'nearest',
+    axis: 'x',
+    intersect: false
+  }
+}
 
+export default function TransactionsPerDay() {
   return (
     <Grid container gap={2} className={scss.wrapper}>
       <Paper className={scss.transactions}>
         <Box className={scss.chart}>
           <Typography>Transactions per day</Typography>
-          <DataChart type='line' data={lineChartData} />
+          <DataChart type='line' options={chartOptions} data={lineChartData} />
         </Box>
         <Box className={scss.cardWrapper}>
           <Card className={scss.card} variant='outlined'>
@@ -33,7 +39,7 @@ export default function TransactionsPerDay() {
             </Box>
             <Box className={scss.cardValue}>
               <Typography>1.275</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>
+              <Typography color='success.main' fontSize={14}>
                 428.7%
               </Typography>
             </Box>
@@ -44,7 +50,7 @@ export default function TransactionsPerDay() {
             </Box>
             <Box className={scss.cardValue}>
               <Typography>4.40%</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>
+              <Typography color='success.main' fontSize={14}>
                 899.4%
               </Typography>
             </Box>
@@ -55,7 +61,7 @@ export default function TransactionsPerDay() {
             </Box>
             <Box className={scss.cardValue}>
               <Typography>0</Typography>
-              <Typography color={theme.palette.success.main} fontSize={14}>
+              <Typography color='success.main' fontSize={14}>
                 0
               </Typography>
             </Box>
