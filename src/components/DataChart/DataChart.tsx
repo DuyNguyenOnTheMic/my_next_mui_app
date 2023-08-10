@@ -1,7 +1,6 @@
-import { darkOptions } from '@/components/DataChart/Themes'
-import { months } from '@/helper/Util'
 import { Chart, ChartConfiguration, registerables } from 'chart.js'
 import { useEffect, useRef } from 'react'
+import { darkOptions } from './Themes'
 
 Chart.register(...registerables)
 
@@ -9,7 +8,7 @@ export default function DataChart(props: ChartConfiguration) {
   const { data, options } = props
   const chartRef = useRef<HTMLCanvasElement>(null)
 
-  const labels = months({ count: 7 })
+  // const labels = months({ count: 7 })
   useEffect(() => {
     if (chartRef.current) {
       const chart = new Chart(chartRef.current, {

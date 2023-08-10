@@ -1,5 +1,7 @@
 'use client'
 
+import DataChart from '@/components/DataChart'
+import { lineChartData } from '@/components/mockData'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import Grid from '@mui/material/Grid'
@@ -22,6 +24,7 @@ export default function TransactionsPerDay() {
       <Paper className={scss.transactions}>
         <Box className={scss.chart}>
           <Typography>Transactions per day</Typography>
+          <DataChart type='line' data={lineChartData} />
         </Box>
         <Box className={scss.cardWrapper}>
           <Card className={scss.card} variant='outlined'>
