@@ -1,8 +1,9 @@
 import { Chart, ChartConfiguration, registerables } from 'chart.js'
+import ChartDataLabels from 'chartjs-plugin-datalabels'
 import { useEffect, useRef } from 'react'
 import { darkOptions } from './Themes'
 
-Chart.register(...registerables)
+Chart.register(...registerables, ChartDataLabels)
 
 export default function DataChart(props: ChartConfiguration) {
   const { data, options } = props
@@ -14,7 +15,11 @@ export default function DataChart(props: ChartConfiguration) {
         ...props,
         options: {
           ...options,
-          ...darkOptions
+          ...darkOptions,
+          plugins: {
+            ...options?.plugins,
+            ...darkOptions?.plugins
+          }
         }
       })
 

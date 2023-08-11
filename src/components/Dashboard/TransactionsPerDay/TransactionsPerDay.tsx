@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
 import { ChartConfiguration } from 'chart.js'
+import { Context } from 'chartjs-plugin-datalabels'
 import scss from './TransactionsPerDay.module.scss'
 
 export type TransactionCardType = {
@@ -17,6 +18,42 @@ export type TransactionCardType = {
 }
 
 const chartOptions: ChartConfiguration['options'] = {
+  plugins: {
+    datalabels: {
+      backgroundColor: function (context: Context) {
+        return context.dataset.borderColor!.toString()
+      },
+      borderRadius: 4,
+      color: 'white',
+      font: {
+        weight: 'bold'
+      },
+      formatter: Math.round,
+      padding: 6
+    }
+  },
+
+  // Core options
+  aspectRatio: 5 / 3,
+  layout: {
+    padding: {
+      top: 32,
+      right: 16,
+      bottom: 16,
+      left: 8
+    }
+  },
+  elements: {
+    line: {
+      fill: false,
+      tension: 0.4
+    }
+  },
+  scales: {
+    y: {
+      stacked: true
+    }
+  },
   interaction: {
     mode: 'nearest',
     axis: 'x',
