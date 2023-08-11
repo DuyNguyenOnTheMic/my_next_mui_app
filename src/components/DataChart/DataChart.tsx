@@ -11,7 +11,7 @@ export default function DataChart(props: ChartConfiguration) {
 
   useEffect(() => {
     if (chartRef.current) {
-      const chart = new Chart(chartRef.current, {
+      new Chart(chartRef.current, {
         ...props,
         options: {
           ...options,
@@ -22,8 +22,6 @@ export default function DataChart(props: ChartConfiguration) {
           }
         }
       })
-
-      return () => chart.destroy()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data])
