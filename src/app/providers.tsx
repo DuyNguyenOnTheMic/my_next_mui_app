@@ -17,6 +17,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     () => ({
       toggleColorMode: () => {
         const chosenMode = mode === 'light' ? 'dark' : 'light'
+        document.documentElement.style.setProperty('color-scheme', chosenMode)
         setMode(chosenMode)
         localStorage.setItem('mode', chosenMode)
       }
