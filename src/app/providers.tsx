@@ -9,7 +9,7 @@ import { SessionProvider } from 'next-auth/react'
 import React from 'react'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} })
-const storedTheme = !localStorage.getItem('mode') ? 'light' : localStorage.getItem('mode')
+const storedTheme = localStorage.getItem('mode') || 'light'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = React.useState(storedTheme)
