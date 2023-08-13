@@ -25,13 +25,17 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     [mode]
   )
 
+  React.useEffect(() => {
+    document.documentElement.style.setProperty('color-scheme', mode)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const darkThemeChosen = React.useMemo(
     () =>
       createTheme({
         ...darkTheme
       }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [mode]
+    []
   )
 
   const lightThemeChosen = React.useMemo(
@@ -39,8 +43,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       createTheme({
         ...lightTheme
       }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [mode]
+    []
   )
 
   return (
