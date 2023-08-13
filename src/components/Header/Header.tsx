@@ -30,7 +30,7 @@ export default function Header({ ColorModeContext }: HeaderProps) {
   }
 
   return (
-    <AppBar position='static' sx={{ mb: '40px' }}>
+    <AppBar position='sticky' sx={{ mb: '40px' }}>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
