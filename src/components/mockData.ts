@@ -1,7 +1,7 @@
-import { months } from '@/helpers/Util'
+import * as Utils from '@/helpers/Utils'
 
 export const lineChartData = {
-  labels: months({ count: 12 }),
+  labels: Utils.months({ count: 12 }),
   datasets: [
     {
       label: 'Transactions',
@@ -9,6 +9,19 @@ export const lineChartData = {
       fill: false,
       borderColor: 'rgb(75, 192, 192)',
       tension: 0.1
+    }
+  ]
+}
+
+const DATA_COUNT = 5
+const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 100 }
+export const doughnutChartData = {
+  labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: Utils.numbers(NUMBER_CFG),
+      backgroundColor: Object.values(Utils.CHART_COLORS)
     }
   ]
 }
