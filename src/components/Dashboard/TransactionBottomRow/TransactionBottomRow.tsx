@@ -23,7 +23,7 @@ const chartOptions: ChartConfiguration['options'] = {
 
 export default function TransactionBottomRow() {
   return (
-    <Grid container>
+    <Grid container className={scss.bottomRow}>
       <Grid>
         <Paper className={scss.dataCard}>
           <p>Transactions per user type</p>
