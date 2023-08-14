@@ -4,13 +4,14 @@ import Header from '@/components/Header'
 import Layout from '@/components/Layout'
 import darkTheme from '@/theme/darkTheme'
 import lightTheme from '@/theme/lightTheme'
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
+import { Box, CircularProgress, CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 import { SessionProvider } from 'next-auth/react'
 import React from 'react'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} })
 
 export default function Providers({ children }: { children: React.ReactNode }) {
+  const [loading, setLoading] = React.useState(true)
   const [mode, setMode] = React.useState<string | null>('light')
   const colorMode = React.useMemo(
     () => ({
@@ -28,6 +29,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     const storedMode = localStorage.getItem('mode') || 'light'
     setMode(storedMode)
     document.documentElement.style.setProperty('color-scheme', storedMode)
+    setLoading(false)
   }, [])
 
   const darkThemeChosen = React.useMemo(
@@ -52,7 +54,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         <SessionProvider>
           <CssBaseline />
           <Header ColorModeContext={ColorModeContext} />
-          <Layout>{children}</Layout>
+          {loading ? (
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <CircularProgress />
+            </Box>
+          ) : (
+            <Layout>{children}</Layout>
+          )}
         </SessionProvider>
       </ThemeProvider>
     </ColorModeContext.Provider>
