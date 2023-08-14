@@ -9,9 +9,9 @@ import { SessionProvider } from 'next-auth/react'
 import React from 'react'
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} })
-const storedTheme = localStorage.getItem('mode') || 'light'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
+  const storedTheme = localStorage.getItem('mode') || 'light'
   const [mode, setMode] = React.useState(storedTheme)
   const colorMode = React.useMemo(
     () => ({
@@ -24,11 +24,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     }),
     [mode]
   )
-
-  React.useEffect(() => {
-    document.documentElement.style.setProperty('color-scheme', mode)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   const darkThemeChosen = React.useMemo(
     () =>
