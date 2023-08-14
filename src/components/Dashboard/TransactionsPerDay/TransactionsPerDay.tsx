@@ -66,7 +66,9 @@ export default function TransactionsPerDay() {
     <Grid container gap={2} className={scss.wrapper}>
       <Paper className={scss.transactions}>
         <Box className={scss.chart}>
-          <Typography>Transactions per day</Typography>
+          <Typography fontSize='1.5rem' fontWeight='bold' align='center'>
+            Transactions per day
+          </Typography>
           <DataChart type='line' options={chartOptions} data={lineChartData} />
         </Box>
         <Box className={scss.cardWrapper}>
