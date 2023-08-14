@@ -25,7 +25,7 @@ const chartOptions: ChartConfiguration['options'] = {
 export default function TransactionBottomRow() {
   return (
     <Grid container className={scss.bottomRow}>
-      <Grid>
+      <Grid item>
         <Paper className={scss.dataCard}>
           <Typography fontWeight='bold' align='center'>
             Transactions per user type
@@ -33,7 +33,7 @@ export default function TransactionBottomRow() {
           <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
         </Paper>
       </Grid>
-      <Grid>
+      <Grid item>
         <Paper className={scss.dataCard}>
           <Typography fontWeight='bold' align='center'>
             Transactions per user type
@@ -41,7 +41,7 @@ export default function TransactionBottomRow() {
           <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
         </Paper>
       </Grid>
-      <Grid>
+      <Grid item>
         <Paper className={scss.dataCard}>
           <Typography fontWeight='bold' align='center'>
             Transactions per user type
@@ -49,7 +49,7 @@ export default function TransactionBottomRow() {
           <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
         </Paper>
       </Grid>
-      <Grid>
+      <Grid item>
         <Paper className={scss.dataCard}>
           <Typography fontWeight='bold' align='center'>
             Transactions per user type
