@@ -1,5 +1,5 @@
 import DataChart from '@/components/DataChart'
-import { doughnutChartData } from '@/components/mockData'
+import { getDoughnutChartData } from '@/components/mockData'
 import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
 import Typography from '@mui/material/Typography'
@@ -30,7 +30,7 @@ export default function TransactionBottomRow() {
           <Typography fontWeight='bold' align='center'>
             Transactions per user type
           </Typography>
-          <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
+          <DataChart type={'doughnut'} options={chartOptions} data={getDoughnutChartData()} />
         </Paper>
       </Grid>
       <Grid item>
@@ -38,7 +38,7 @@ export default function TransactionBottomRow() {
           <Typography fontWeight='bold' align='center'>
             Transactions per user type
           </Typography>
-          <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
+          <DataChart type={'doughnut'} options={chartOptions} data={getDoughnutChartData()} />
         </Paper>
       </Grid>
       <Grid item>
@@ -46,7 +46,7 @@ export default function TransactionBottomRow() {
           <Typography fontWeight='bold' align='center'>
             Transactions per user type
           </Typography>
-          <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
+          <DataChart type={'doughnut'} options={chartOptions} data={getDoughnutChartData()} />
         </Paper>
       </Grid>
       <Grid item>
@@ -54,7 +54,7 @@ export default function TransactionBottomRow() {
           <Typography fontWeight='bold' align='center'>
             Transactions per user type
           </Typography>
-          <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
+          <DataChart type={'doughnut'} options={chartOptions} data={getDoughnutChartData()} />
         </Paper>
       </Grid>
     </Grid>
