@@ -7,7 +7,13 @@ export function getLineChartData() {
     labels: Utils.months({ count: 12 }),
     datasets: [
       {
-        label: 'Transactions',
+        label: 'Transactions 1',
+        data: Utils.numbers(LINE_NUMBER_CFG),
+        borderColor: Utils.CHART_COLORS.red,
+        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5)
+      },
+      {
+        label: 'Transactions 2',
         data: Utils.numbers(LINE_NUMBER_CFG),
         borderColor: Utils.CHART_COLORS.blue,
         backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5)
