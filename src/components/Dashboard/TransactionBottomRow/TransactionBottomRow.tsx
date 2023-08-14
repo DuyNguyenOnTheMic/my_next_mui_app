@@ -2,6 +2,7 @@ import DataChart from '@/components/DataChart'
 import { doughnutChartData } from '@/components/mockData'
 import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
+import Typography from '@mui/material/Typography'
 import { ChartConfiguration } from 'chart.js'
 import scss from './TransactionBottomRow.module.scss'
 
@@ -26,25 +27,33 @@ export default function TransactionBottomRow() {
     <Grid container className={scss.bottomRow}>
       <Grid>
         <Paper className={scss.dataCard}>
-          <p>Transactions per user type</p>
+          <Typography fontWeight='bold' align='center'>
+            Transactions per user type
+          </Typography>
           <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
         </Paper>
       </Grid>
       <Grid>
         <Paper className={scss.dataCard}>
-          <p>Transactions per user type</p>
+          <Typography fontWeight='bold' align='center'>
+            Transactions per user type
+          </Typography>
           <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
         </Paper>
       </Grid>
       <Grid>
         <Paper className={scss.dataCard}>
-          <p>Transactions per user type</p>
+          <Typography fontWeight='bold' align='center'>
+            Transactions per user type
+          </Typography>
           <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
         </Paper>
       </Grid>
       <Grid>
         <Paper className={scss.dataCard}>
-          <p>Transactions per user type</p>
+          <Typography fontWeight='bold' align='center'>
+            Transactions per user type
+          </Typography>
           <DataChart type={'doughnut'} options={chartOptions} data={doughnutChartData} />
         </Paper>
       </Grid>
