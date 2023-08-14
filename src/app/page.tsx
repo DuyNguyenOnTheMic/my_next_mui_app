@@ -1,9 +1,10 @@
-import { authOptions } from '@/lib/auth'
-import { getServerSession } from 'next-auth'
+'use client'
+
+import { useSession } from 'next-auth/react'
 import Dashboard from './dashboard/page'
 
-export default async function Home() {
-  const session = await getServerSession(authOptions)
+export default function Home() {
+  const { data: session } = useSession()
 
   return session && <Dashboard />
 }
