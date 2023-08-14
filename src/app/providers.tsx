@@ -11,8 +11,7 @@ import React from 'react'
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} })
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const storedTheme = localStorage.getItem('mode') || 'light'
-  const [mode, setMode] = React.useState(storedTheme)
+  const [mode, setMode] = React.useState<string | null>('light')
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -24,6 +23,12 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     }),
     [mode]
   )
+
+  React.useEffect(() => {
+    const storedMode = localStorage.getItem('mode') || 'light'
+    setMode(storedMode)
+    document.documentElement.style.setProperty('color-scheme', storedMode)
+  }, [])
 
   const darkThemeChosen = React.useMemo(
     () =>
