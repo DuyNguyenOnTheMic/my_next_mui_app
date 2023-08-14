@@ -10,6 +10,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 import { useState } from 'react'
 import ThemeToggle from '../ThemeToggle'
 
@@ -37,7 +38,7 @@ export default function Header({ ColorModeContext }: HeaderProps) {
           <Typography
             variant='h6'
             noWrap
-            component='a'
+            component={Link}
             href='/'
             sx={{
               mr: 2,
@@ -55,7 +56,7 @@ export default function Header({ ColorModeContext }: HeaderProps) {
           <Typography
             variant='h5'
             noWrap
-            component='a'
+            component={Link}
             href='/'
             sx={{
               mr: 2,
