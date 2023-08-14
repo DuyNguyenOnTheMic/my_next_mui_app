@@ -1,8 +1,9 @@
 import * as Utils from '@/helpers/Utils'
 
-const LINE_DATA_COUNT = 12
-const LINE_NUMBER_CFG = { count: LINE_DATA_COUNT, min: 0, max: 120 }
 export function getLineChartData() {
+  const LINE_DATA_COUNT = 12
+  const LINE_NUMBER_CFG = { count: LINE_DATA_COUNT, min: 0, max: 120 }
+
   return {
     labels: Utils.months({ count: 12 }),
     datasets: [
@@ -22,9 +23,10 @@ export function getLineChartData() {
   }
 }
 
-const DOUGHNUT_DATA_COUNT = 5
-const DOUGHNUT_NUMBER_CFG = { count: DOUGHNUT_DATA_COUNT, min: 0, max: 100 }
 export function getDoughnutChartData() {
+  const DOUGHNUT_DATA_COUNT = 5
+  const DOUGHNUT_NUMBER_CFG = { count: DOUGHNUT_DATA_COUNT, min: 0, max: 100 }
+
   return {
     labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
     datasets: [
