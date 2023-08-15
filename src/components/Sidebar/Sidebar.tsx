@@ -4,6 +4,7 @@ import BarChartIcon from '@mui/icons-material/BarChart'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import ExitToAppIcon from '@mui/icons-material/ExitToApp'
+import HomeIcon from '@mui/icons-material/Home'
 import Person2Icon from '@mui/icons-material/Person2'
 import SettingsIcon from '@mui/icons-material/Settings'
 import Box from '@mui/material/Box'
@@ -46,9 +47,10 @@ const closedMixin = (theme: Theme): CSSObject => ({
   }
 })
 
-const menuRouteList = ['analytics', 'profile', 'settings', '']
-const menuListTranslations = ['Analytics', 'Profile', 'Settings', 'Sign Out']
+const menuRouteList = ['', 'analytics', 'profile', 'settings', '']
+const menuListTranslations = ['Home', 'Analytics', 'Profile', 'Settings', 'Sign Out']
 const menuListIcons = [
+  <HomeIcon key='home' />,
   <BarChartIcon key='analytics' />,
   <Person2Icon key='profile' />,
   <SettingsIcon key='settings' />,

@@ -1,3 +1,5 @@
+'use client'
+
 import DataRibbon from '@/components/Dashboard/DataRibbon'
 import TransactionBottomRow from '@/components/Dashboard/TransactionBottomRow'
 import TransactionsPerDay from '@/components/Dashboard/TransactionsPerDay'
