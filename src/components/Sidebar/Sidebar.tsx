@@ -6,6 +6,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import ExitToAppIcon from '@mui/icons-material/ExitToApp'
 import Person2Icon from '@mui/icons-material/Person2'
 import SettingsIcon from '@mui/icons-material/Settings'
+import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
 import Drawer from '@mui/material/Drawer'
 import IconButton from '@mui/material/IconButton'
@@ -91,11 +92,14 @@ export default function Sidebar() {
         }
       }}
     >
-      <div className={scss.drawerHeader}>
+      <Box
+        className={scss.drawerHeader}
+        sx={{ ...(open && { justifyContent: 'flex-end !important', padding: '0 1rem' }) }}
+      >
         <IconButton onClick={handleDrawerToggle}>
           {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
         </IconButton>
-      </div>
+      </Box>
       <Divider />
       <List>
         {menuListTranslations.map((text, index) => (
