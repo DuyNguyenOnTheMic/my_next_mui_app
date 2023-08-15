@@ -1,4 +1,5 @@
 import { useSession } from 'next-auth/react'
+import Footer from '../Footer'
 import Sidebar from '../Sidebar'
 import scss from './Layout.module.scss'
 
@@ -9,6 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <main className={scss.layout} style={{ padding: session ? '0 24px 0 80px' : 0 }}>
       {session && <Sidebar />}
       {children}
+      <Footer />
     </main>
   )
 }
