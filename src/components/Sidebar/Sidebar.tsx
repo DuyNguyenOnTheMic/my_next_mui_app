@@ -47,11 +47,11 @@ const closedMixin = (theme: Theme): CSSObject => ({
   }
 })
 
-const menuRouteList = ['', 'analytics', 'profile', 'settings', '']
-const menuListTranslations = ['Home', 'Analytics', 'Profile', 'Settings', 'Sign Out']
+const menuRouteList = ['', 'data', 'profile', 'settings', '']
+const menuListTranslations = ['Home', 'Data', 'Profile', 'Settings', 'Sign Out']
 const menuListIcons = [
   <HomeIcon key='home' />,
-  <BarChartIcon key='analytics' />,
+  <BarChartIcon key='data' />,
   <Person2Icon key='profile' />,
   <SettingsIcon key='settings' />,
   <ExitToAppIcon key='sign out' />

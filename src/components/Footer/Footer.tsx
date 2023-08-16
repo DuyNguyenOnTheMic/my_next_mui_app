@@ -22,7 +22,7 @@ export default function Footer() {
             <FooterLink href={'/'}>Home</FooterLink>
           </li>
           <li>
-            <FooterLink href={'/dashboard/analytics'}>Analytics</FooterLink>
+            <FooterLink href={'/dashboard/data'}>Data</FooterLink>
           </li>
           <li>
             <FooterLink href={'/dashboard/profile'}>Profile</FooterLink>
