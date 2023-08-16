@@ -97,6 +97,9 @@ export default function Header({ ColorModeContext }: HeaderProps) {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              <MenuItem component={Link} href='/dashboard/profile'>
+                <Typography textAlign='center'>Profile</Typography>
+              </MenuItem>
               <MenuItem onClick={() => (session ? signOut() : signIn())}>
                 <Typography textAlign='center'>{session ? 'Logout' : 'Login'}</Typography>
               </MenuItem>
