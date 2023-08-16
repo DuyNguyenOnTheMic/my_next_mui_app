@@ -10,20 +10,42 @@ import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { useSession } from 'next-auth/react'
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 export default function Profile() {
   const { data: session } = useSession()
-  const handleFormChange = () => {}
-  const handleSubmit = () => {}
 
-  const formData = {
+  const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
     receiveEmails: false
+  })
+
+  useEffect(() => {
+    const user = session?.user
+    const fullName = user?.name ? user.name.split(' ') : []
+    const firstName = fullName[0] || ''
+    const lastName = fullName?.length > 1 ? fullName[fullName?.length - 1] : ''
+    const email = user?.email || ''
+    setFormData({
+      ...formData,
+      firstName: firstName,
+      lastName: lastName,
+      email: email
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session])
+
+  const handleFormChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, checked } = event.target
+    setFormData(preState => ({ ...preState, [name]: name === 'receiveEmails' ? checked : value }))
+  }
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    console.log(formData)
   }
 
   return (
@@ -37,7 +59,7 @@ export default function Profile() {
           <Grid container justifyContent='center'>
             <Grid item xs={12} sm={8} md={6}>
               <Box display='flex' flexDirection='column' alignItems='center'>
-                <Avatar sx={{ height: 100, width: 100, mb: 2 }} src={session?.user?.image as string}></Avatar>
+                <Avatar sx={{ height: 100, width: 100, mb: 3 }} src={session?.user?.image as string}></Avatar>
               </Box>
               <form onSubmit={handleSubmit} style={{ maxWidth: 600, margin: '0 auto' }}>
                 <Grid container spacing={3}>
@@ -89,7 +111,7 @@ export default function Profile() {
                       fullWidth
                       type='password'
                       label='Confirm Password'
-                      name='confirmPasswordđ'
+                      name='confirmPassword'
                       value={formData.confirmPassword}
                       onChange={handleFormChange}
                     />
